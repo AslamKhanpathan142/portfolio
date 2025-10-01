@@ -99,8 +99,8 @@ const projects = [
     title: "Portfolio Website",
     description: "Modern portfolio with animations and dark mode.",
     tags: ["React", "Framer Motion", "CSS Modules"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/AslamKhanpathan142/portfolio",
+    live: "https://portfolio-vert-six-50.vercel.app/",
     image: portfolio,
   }
 ]
