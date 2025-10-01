@@ -95,7 +95,7 @@ npm run dev
 
 - Email: khanaslampathan142@gmail.com
 
-- LinkedIn: [LinkedIn](https://linkedin.com/in/aslam-khan)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mo-aslam-khan)
 
 - GitHub: [GitHub](https://github.com/AslamKhanpathan142)
 
