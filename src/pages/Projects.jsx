@@ -12,6 +12,7 @@ import movie from "../assets/movie.png"
 import crome from "../assets/c.png"
 import invortry from "../assets/create.png"
 import portfolio from "../assets/portfolio.png"
+import gatepass from "../assets/rectorDashboard.png"
 
 // Sample project data
 const projects = [
@@ -19,90 +20,111 @@ const projects = [
     id: 1,
     title: "MEDICAL APPOINTMENT BOOKING SYSTEM",
     description: "A MERN stack app that allows patients to register, search doctors by specialization, and book appointments in real time.",
-    tags: ["MERN Stack", "Redux", "JWT"],
+    tags: ["MERN Stack", "JWT", "Bcrypt"],
+    github: "https://github.com/AslamKhanpathan142/smart-medical-appointment-system-with-mern-stack",
+    live: "https://smart-medical-appointment-system-wi.vercel.app/",
     image: Medical,
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
   },
   {
     id: 2,
+    title: "Online Gatepass Approval System",
+    description: "A MERN stack web application for managing student gatepass requests and hostel-based rector approvals.",
+    tags: ["MERN Stack", "JWT", "Bcrypt"],
+    github: "https://github.com/AslamKhanpathan142/online-gatepass-approval-system-with-mern-stack",
+    live: "https://online-gatepass-approval-system-wit.vercel.app/",
+    image: gatepass,
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
+  },
+  {
+    id: 3,
     title: "ONLINE VOTING SYSTEM",
     description: "A secure MERN stack-based online voting system with user authentication, poll creation, and live result display.",
-    tags: ["MERN Stack", "JWT"],
+    tags: ["MERN Stack", "JWT", "Bcrypt"],
     github: "https://github.com/AslamKhanpathan142/online-voting-system-with-mern-stack",
     live: "https://online-voting-system-with-mern-stac.vercel.app/",
     image: Voting,
-  },
-  {
-    id: 12,
-    title: "Online Bookstore",
-    description: "E-commerce bookstore app with authentication, book browsing, filtering, cart, order, and admin features.",
-    tags: ["MERN Stack", "E-Commerce", "JWT"],
-    github: "https://github.com/AslamKhanpathan142/online-book-store-with-mern-stack",
-    live: "https://online-book-store-with-mern-stack.vercel.app",
-    image: Book
-  },
-  {
-    id: 11,
-    title: "Blog App",
-    description: "A MERN blog app with login/signup, blog posting, editing, and profile view for user-specific content.",
-    tags: ["MERN Stack", "JWT"],
-    github: "https://github.com/AslamKhanpathan142/blog-app-with-mern-stack",
-    live: "https://blog-app-with-mern-stack-ten.vercel.app/",
-    image: vlog
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
   },
   {
     id: 4,
+    title: "Online Bookstore",
+    description: "E-commerce bookstore app with authentication, book browsing, filtering, cart, order, and admin features.",
+    tags: ["MERN Stack", "E-Commerce", "JWT", "Bcrypt"],
+    github: "https://github.com/AslamKhanpathan142/online-book-store-with-mern-stack",
+    live: "https://online-book-store-with-mern-stack.vercel.app",
+    image: Book,
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
+  },
+  {
+    id: 5,
+    title: "Blog App",
+    description: "A MERN blog app with login/signup, blog posting, editing, and profile view for user-specific content.",
+    tags: ["MERN Stack", "JWT", "Bcrypt"],
+    github: "https://github.com/AslamKhanpathan142/blog-app-with-mern-stack",
+    live: "https://blog-app-with-mern-stack-ten.vercel.app/",
+    image: vlog,
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
+  },
+  {
+    id: 6,
     title: "Real-Time Chat App",
     description: "A real-time messaging app using React, Node.js, and Socket.IO. Supports group and private chat.",
     tags: ["React", "Node.js", "Socket.IO"],
     github: "https://github.com/AslamKhanpathan142/real-time-chat-application",
-    live: "#",
     image: chat,
   },
   {
-    id: 5,
-    title: "AI Image Generator",
-    description: "Generates images from user prompts using OpenAI’s DALL·E API. Built with React and Tailwind CSS.",
-    tags: ["React", "OpenAI", "API", "Tailwind CSS"],
-    github: "https://github.com/AslamKhanpathan142/ai-image-generator-openai-react",
-    live: "https://aslamkhanpathan142.github.io/ai-image-generator-openai-react/",
-    image: AIimage,
-  },
-  {
     id: 7,
-    title: "Movie Search App",
-    description: "Search movies using the OMDb API. Features favorites list and detailed view.",
-    tags: ["React", "API", "CSS", "React Router"],
-    github: "https://github.com/AslamKhanpathan142/movie-search-app",
-    live: "https://movie-search-app-taupe-psi.vercel.app/",
-    image: movie,
-  },
-  {
-    id: 11,
-    title: "Chrome Extension - Productivity Tracker",
-    description: "Tracks time spent on websites with a React-based Chrome extension.",
-    tags: ["React", "Chrome API", "JavaScript", "Extension"],
-    github: "https://github.com/AslamKhanpathan142/chrome-extension-for-personal-productivity-tracker",
-    live: "#",
-    image: crome,
-  },
-  {
-    id: 12,
-    title: "Inoventry Grocery Manager",
-    description: "React Native inventory app for grocery owners to manage and update stock items.",
-    tags: ["React Native", "JavaScript", "Mobile App", "Inventory System"],
-    github: "https://github.com/AslamKhanpathan142/inoventry-grocery-manager-with-react-native",
-    live: "#",
-    image: invortry,
-  },
-  {
-    id: 13,
     title: "Portfolio Website",
     description: "Modern portfolio with animations and dark mode.",
     tags: ["React", "Framer Motion", "CSS Modules"],
     github: "https://github.com/AslamKhanpathan142/portfolio",
     live: "https://portfolio-vert-six-50.vercel.app/",
     image: portfolio,
-  }
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
+  },
+  {
+    id: 8,
+    title: "AI Image Generator",
+    description: "Generates images from user prompts using OpenAI’s DALL·E API. Built with React and Tailwind CSS.",
+    tags: ["React", "OpenAI", "API", "Tailwind CSS"],
+    github: "https://github.com/AslamKhanpathan142/ai-image-generator-openai-react",
+    live: "https://aslamkhanpathan142.github.io/ai-image-generator-openai-react/",
+    image: AIimage,
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
+  },
+  {
+    id: 9,
+    title: "Movie Search App",
+    description: "Search movies using the OMDb API. Features favorites list and detailed view.",
+    tags: ["React", "API", "CSS", "React Router"],
+    github: "https://github.com/AslamKhanpathan142/movie-search-app",
+    image: movie,
+  },
+  {
+    id: 10,
+    title: "Chrome Extension - Productivity Tracker",
+    description: "Tracks time spent on websites with a React-based Chrome extension.",
+    tags: ["React", "Chrome API", "JavaScript", "Extension"],
+    github: "https://github.com/AslamKhanpathan142/chrome-extension-for-personal-productivity-tracker",
+    image: crome,
+  },
+  {
+    id: 11,
+    title: "Inoventry Grocery Manager",
+    description: "React Native inventory app for grocery owners to manage and update stock items.",
+    tags: ["React Native", "JavaScript", "Mobile App", "Inventory System"],
+    github: "https://github.com/AslamKhanpathan142/inoventry-grocery-manager-with-react-native",
+    image: invortry,
+  },
 ]
 
 const ProjectsPage = () => {
@@ -216,7 +238,7 @@ const ProjectsPage = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-3">
+                <div className="flex space-x-6" >
                   <a
                     href={project.github}
                     className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
@@ -227,7 +249,7 @@ const ProjectsPage = () => {
                     href={project.live}
                     className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
                   >
-                    <FiExternalLink className="mr-1" /> Live Demo
+                    {project.Demo}{project.text}
                   </a>
                 </div>
               </div>
