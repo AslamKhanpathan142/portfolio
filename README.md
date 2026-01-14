@@ -28,14 +28,24 @@ I also have experience in backend development using **Node.js**, **Express.js**,
 
 ## 📂 Projects
 
-### 1. Online Book Store
+### 1. Smart Medical Appointment System
+- **Description:** A MERN stack app that allows patients to register, search doctors by specialization, and book appointments in real time
+- **Live Demo:** [Smart Medical Appointment System](https://smart-medical-appointment-system-wi.vercel.app/)  
+- **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/smart-medical-appointment-system-with-mern-stack)
+
+### 2. Online Gatepass Approval System
+- **Description:** A MERN stack web application for managing student gatepass requests and hostel-based rector approvals..
+- **Live Demo:** [Online Gatepass Approval System](https://online-gatepass-approval-system-wit.vercel.app/)  
+- **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/online-gatepass-approval-system-with-mern-stack)
+
+### 2. Online Book Store
 - **Description:** A full-stack MERN web app to browse, search, and add books to a cart.
 - **Live Demo:** [Online Book Store](https://online-book-store-with-mern-stack.vercel.app/)  
 - **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/online-book-store-with-mern-stack)
 
-### 1. Online Voting System
+### 3. Online Voting System
 - **Description:** A secure MERN stack-based online voting system with user authentication, poll creation, and live result display..
-- **Live Demo:** [Online Book Store](https://online-voting-system-with-mern-stac.vercel.app/)  
+- **Live Demo:** [Online Voting System](https://online-voting-system-with-mern-stac.vercel.app/)  
 - **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/online-voting-system-with-mern-stack)
 
 ### 2. Blog App
