@@ -38,22 +38,22 @@ I also have experience in backend development using **Node.js**, **Express.js**,
 - **Live Demo:** [Online Gatepass Approval System](https://online-gatepass-approval-system-wit.vercel.app/)  
 - **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/online-gatepass-approval-system-with-mern-stack)
 
-### 2. Online Book Store
+### 3. Online Book Store
 - **Description:** A full-stack MERN web app to browse, search, and add books to a cart.
 - **Live Demo:** [Online Book Store](https://online-book-store-with-mern-stack.vercel.app/)  
 - **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/online-book-store-with-mern-stack)
 
-### 3. Online Voting System
+### 4. Online Voting System
 - **Description:** A secure MERN stack-based online voting system with user authentication, poll creation, and live result display..
 - **Live Demo:** [Online Voting System](https://online-voting-system-with-mern-stac.vercel.app/)  
 - **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/online-voting-system-with-mern-stack)
 
-### 2. Blog App
+### 5. Blog App
 - **Description:** Users can create, read, and manage blogs. Includes user authentication.
 - **Live Demo:** [Blog App](https://blog-app-with-mern-stack-ten.vercel.app/)  
 - **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/blog-app-with-mern-stack)
 
-### 3. Portfolio Website
+### 6. Portfolio Website
 - **Description:** My personal portfolio showcasing my projects and skills.
 - **Live Demo:** [Portfolio](https://portfolio-vert-six-50.vercel.app/)  
 - **Repo:** [GitHub Link](https://github.com/AslamKhanpathan142/portfolio)
