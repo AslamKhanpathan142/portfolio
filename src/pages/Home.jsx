@@ -9,7 +9,7 @@ import {
 } from "react-icons/fi";
 import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss } from "react-icons/si";
-import Voting from "../assets/Voting.png";
+import Home from "../assets/home.png";
 import Medical from "../assets/medical.png";
 import Profile from "/profile.jpg";
 
@@ -18,21 +18,21 @@ const HomePage = () => {
 
   // Project preview data (frontend-only)
   const projects = [
-    {
+     {
       id: 1,
+      title: "AI SMART INTERVIEW & HIRING SYSTEM",
+      description:
+        "Built an AI-powered hiring platform for resume analysis, skill matching, interview generation, and automated candidate evaluation.",
+      tags: ["MERN STACK"],
+      image: Home,
+    },
+    {
+      id: 2,
       title: "MEDICAL APPOINTMENT BOOKING SYSTEM",
       description:
         "Built a full-featured medical appointment platform enabling patients to register, search doctors by specialization, and book appointments in real time.",
       tags: ["MERN STACK"],
       image: Medical,
-    },
-    {
-      id: 2,
-      title: "ONLINE VOTING SYSTEM",
-      description:
-        "Developed a secure Online Voting System using MERN stack with user login, poll creation, and live result display.",
-      tags: ["MERN STACK"],
-      image: Voting,
     },
   ];
 

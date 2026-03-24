@@ -4,7 +4,7 @@ import { FiGithub, FiExternalLink, FiCode } from "react-icons/fi";
 import { Helmet } from "react-helmet";
 import Voting from "../assets/Voting.png"
 import Medical from "../assets/medical.png"
-import Book from "../assets/home.png"
+import Book from "../assets/book.png"
 import vlog from "../assets/vlog.png"
 import chat from "../assets/chat.png"
 import AIimage from "../assets/AIimage.png"
@@ -13,12 +13,24 @@ import crome from "../assets/c.png"
 import invortry from "../assets/create.png"
 import portfolio from "../assets/portfolio.png"
 import gatepass from "../assets/rectorDashboard.png"
+import Home from "../assets/home.png";
 
 // Sample project data
 const projects = [
   {
+    id: 19,
+    title: "AI Smart Interview & Hiring System",
+    description: "Built an AI-powered hiring platform for resume analysis, skill matching, interview generation, and automated candidate evaluation..",
+    tags: ["MERN Stack", "JWT", "Bcrypt", "Redux"],
+    // github: "https://github.com/AslamKhanpathan142/smart-medical-appointment-system-with-mern-stack",
+    // live: "https://smart-medical-appointment-system-wi.vercel.app/",
+    image: Home,
+    // Demo: <FiExternalLink className="mr-1" />,
+    // text : 'Live Demo'
+  },
+  {
     id: 1,
-    title: "MEDICAL APPOINTMENT BOOKING SYSTEM",
+    title: "Medical Appointment Booking System",
     description: "A MERN stack app that allows patients to register, search doctors by specialization, and book appointments in real time.",
     tags: ["MERN Stack", "JWT", "Bcrypt"],
     github: "https://github.com/AslamKhanpathan142/smart-medical-appointment-system-with-mern-stack",
@@ -40,7 +52,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "ONLINE VOTING SYSTEM",
+    title: "Online Voting System",
     description: "A secure MERN stack-based online voting system with user authentication, poll creation, and live result display.",
     tags: ["MERN Stack", "JWT", "Bcrypt"],
     github: "https://github.com/AslamKhanpathan142/online-voting-system-with-mern-stack",

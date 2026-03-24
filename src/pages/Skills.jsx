@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaReact, FaNodeJs, FaDatabase, FaMobile, FaServer, } from 'react-icons/fa';
-import { SiJavascript, SiMongodb, SiExpress,SiRedux } from 'react-icons/si';
+import { SiJavascript, SiMongodb, SiExpress,SiRedux, SiSupabase } from 'react-icons/si';
 
 
 
@@ -24,6 +24,7 @@ const Skills = () => {
     database: [
       { icon: <SiMongodb className="text-green-700" size={32} />, name: 'MongoDB', level: 85 },
       { icon: <FaDatabase  className="text-blue-600" size={32} />, name: 'SQL', level: 80 },
+      { icon: <SiSupabase className="text-green-500" size={32} />, name: 'Supabase', level: 70 },
     ],
     mobile: [
       { icon: <FaMobile className="text-purple-500" size={32} />, name: 'React Native', level: 80 },
