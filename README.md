@@ -90,7 +90,7 @@ npm run dev
 ## 🖼 Screenshots
 
 ### Home Page
-![Home Page](./screenshots/hamep.png)
+![Home Page](./screenshots/profile5.png)
 
 ### Skill Page
 ![Skill Page](./screenshots/skillp.png)
