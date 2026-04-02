@@ -11,7 +11,7 @@ import AIimage from "../assets/AIimage.png"
 import movie from "../assets/movie.png"
 import crome from "../assets/c.png"
 import invortry from "../assets/create.png"
-import portfolio from "../assets/portfolio.png"
+import portfolio from "../assets/profile5.png"
 import gatepass from "../assets/rectorDashboard.png"
 import Home from "../assets/home.png";
 

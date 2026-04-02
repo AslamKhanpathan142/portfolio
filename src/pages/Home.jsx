@@ -11,7 +11,7 @@ import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss } from "react-icons/si";
 import Home from "../assets/home.png";
 import Medical from "../assets/medical.png";
-import Profile from "/profile.jpg";
+import Profile from "/profile7.jpeg";
 
 const HomePage = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
@@ -147,7 +147,7 @@ const HomePage = () => {
                 <img
                   src={Profile}
                   alt="MERN stack developer working on laptop"
-                  className="absolute inset-0 w-full h-full "
+                  className="absolute inset-0 w-full h-full object-cover lg:object-[50%_45%]"
                 />
               </div>
 
