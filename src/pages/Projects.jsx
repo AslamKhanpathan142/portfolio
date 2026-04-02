@@ -21,12 +21,12 @@ const projects = [
     id: 19,
     title: "AI Smart Interview & Hiring System",
     description: "Built an AI-powered hiring platform for resume analysis, skill matching, interview generation, and automated candidate evaluation..",
-    tags: ["MERN Stack", "JWT", "Bcrypt", "Redux"],
-    // github: "https://github.com/AslamKhanpathan142/smart-medical-appointment-system-with-mern-stack",
-    // live: "https://smart-medical-appointment-system-wi.vercel.app/",
+    tags: ["MERN Stack", "JWT", "Bcrypt", "Redux", "Supabase"],
+    github: "https://github.com/AslamKhanpathan142/ai-smart-interview-and-hiring-system-with-supabase",
+    live: "https://ai-smart-interview-and-hiring-syste.vercel.app/",
     image: Home,
-    // Demo: <FiExternalLink className="mr-1" />,
-    // text : 'Live Demo'
+    Demo: <FiExternalLink className="mr-1" />,
+    text : 'Live Demo'
   },
   {
     id: 1,
