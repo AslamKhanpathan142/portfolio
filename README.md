@@ -113,4 +113,7 @@ npm run dev
 - LinkedIn: [LinkedIn](https://linkedin.com/in/mo-aslam-khan)
 
 - GitHub: [GitHub](https://github.com/AslamKhanpathan142)
+  
+If you have any questions, issues, or suggestions regarding this project, please reach out to me via email.
+
 
