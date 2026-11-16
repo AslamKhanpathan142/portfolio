@@ -1,300 +1,150 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import {
-  FiGithub,
-  FiLinkedin,
-  FiMail,
-  FiDownload,
-  FiArrowRight,
-} from "react-icons/fi";
-import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiTailwindcss } from "react-icons/si";
-import Home from "../assets/home.png";
-import Medical from "../assets/medical.png";
-import Profile from "/profile7.jpeg";
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { LuArrowRight, LuMail, LuDownload, LuMapPin, LuLock, LuScanText, LuFileText, LuListOrdered, LuDatabase, LuSparkles } from 'react-icons/lu'
+import { SiReact, SiNodedotjs, SiMongodb, SiPython, SiRedis } from 'react-icons/si'
+import usePageTitle from '../hooks/usePageTitle'
+import BrowserFrame from '../components/BrowserFrame'
+import ProjectCard from '../components/ProjectCard'
+import SectionHead from '../components/Section'
+import Reveal from '../components/Reveal'
+import Spot from '../components/Spot'
+import { profile, experience } from '../data/profile'
+import { projects } from '../data/projects'
+import { skillIcon, homeTech } from '../data/icons'
 
-const HomePage = () => {
-  const [hoveredTech, setHoveredTech] = useState(null);
+const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } }
+const rise = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.2, 0.7, 0.2, 1] } } }
+const stage = projects.slice(0, 4)
+const job = experience[0]
 
-  // Project preview data (frontend-only)
-  const projects = [
-     {
-      id: 1,
-      title: "AI SMART INTERVIEW & HIRING SYSTEM",
-      description:
-        "Built an AI-powered hiring platform for resume analysis, skill matching, interview generation, and automated candidate evaluation.",
-      tags: ["MERN STACK"],
-      image: Home,
-    },
-    {
-      id: 2,
-      title: "MEDICAL APPOINTMENT BOOKING SYSTEM",
-      description:
-        "Built a full-featured medical appointment platform enabling patients to register, search doctors by specialization, and book appointments in real time.",
-      tags: ["MERN STACK"],
-      image: Medical,
-    },
-  ];
-
-  // Tech stack with animation variants
-  const techStack = [
-    { icon: <FaReact />, name: "React" },
-    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <SiExpress />, name: "Express" },
-    { icon: <SiMongodb />, name: "MongoDB" },
-    { icon: <FaDatabase />, name: "SQL" },
-  ];
+export default function Home() {
+  usePageTitle('', 'Mo Aslam Khan is a Full Stack Developer building web applications with React.js, Node.js and Python, including AI-powered document processing with OCR and the Gemini API.')
+  const [active, setActive] = useState(0)
+  const p = stage[active]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
-      {/* Hero Section */}
-      <section className=" pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-3xl font-semibold text-blue-600 mb-2"
-              >
-                Hi, I'm{" "}
-                <span className=" text-3xl font-bold">Mo Aslam Khan</span>
+    <>
+      <section className="hero">
+        <div className="wrap">
+          <motion.div variants={stagger} initial="hidden" animate="show" className="hero-grid">
+            <div>
+              <motion.p variants={rise} className="hero-chip"><span className="dot" /> {profile.name}<i /> {profile.role}</motion.p>
+              <motion.h1 variants={rise}>Full stack engineer building web apps, APIs and AI-powered software.</motion.h1>
+              <motion.p variants={rise} className="lead">
+                I build with React.js, Node.js and Python, from responsive interfaces and RESTful APIs with authentication and RBAC to AI document pipelines that run on OCR, Redis and the Gemini API.
               </motion.p>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
-              >
-                MERN Stack Developer
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="text-lg text-gray-600 mb-8 max-w-lg"
-              >
-                I craft responsive and scalable web applications using the MERN
-                stack and industry-standard tools.
-              </motion.p>
-
-              <div className="flex flex-wrap gap-4 mb-12">
-                <motion.a
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 1 }}
-                  href="/contact"
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg flex items-center shadow-md hover:shadow-lg transition-all"
-                >
-                  Contact Me <FiArrowRight className="ml-2" />
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="/resume.pdf"
-                  className="px-6 py-3 bg-white text-gray-800 rounded-lg border border-gray-200 flex items-center shadow-sm hover:shadow-md transition-all"
-                >
-                  View Resume
-                </motion.a>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-500">Find me on:</span>
-                <motion.a
-                  whileHover={{ y: -2 }}
-                  href="https://github.com/AslamKhanpathan142"
-                  className="text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  <FiGithub size={20} />
-                </motion.a>
-                <motion.a
-                  whileHover={{ y: -2 }}
-                  href="https://www.linkedin.com/in/mo-aslam-khan/"
-                  className="text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  <FiLinkedin size={20} />
-                </motion.a>
-                <motion.a
-                  whileHover={{ y: -2 }}
-                  href="mailto:khanaslampathan142@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  <FiMail size={20} />
-                </motion.a>
-              </div>
-            </motion.div>
-
-            {/* Right Column - Image/Graphic */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="relative w-full h-80 md:h-96 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl overflow-hidden shadow-xl">
-                {/* Replace with your image */}
-                <img
-                  src={Profile}
-                  alt="MERN stack developer working on laptop"
-                  className="absolute inset-0 w-full h-full object-cover lg:object-[50%_45%]"
-                />
-              </div>
-
-              {/* Floating tech icons */}
-              <div className="absolute -bottom-8 left-0 right-0 flex justify-center">
-                <div className="bg-white p-2 rounded-full shadow-lg flex space-x-4">
-                  {techStack.map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.2, y: -5 }}
-                      onHoverStart={() => setHoveredTech(tech.name)}
-                      onHoverEnd={() => setHoveredTech(null)}
-                      className="p-2 bg-gray-50 rounded-full cursor-pointer"
-                    >
-                      <div className="text-2xl text-gray-700">{tech.icon}</div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack Bubble */}
-      {hoveredTech && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="fixed bottom-20 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gray-800 text-white rounded-full text-sm shadow-lg"
-        >
-          {hoveredTech}
-        </motion.div>
-      )}
-
-      {/* Projects Preview */}
-      <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-3">
-              Featured <span className="text-blue-600">Projects</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Some of my recent work as a full-stack developer
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                whileHover={{ y: -10 }}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={`Screenshot of ${project.title}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                      
-                    ))}
-                  </div>
-                </div>
+              <motion.div variants={rise} className="cta">
+                <Link className="btn btn-primary" to="/projects">View Projects <LuArrowRight size={16} /></Link>
+                <Link className="btn" to="/contact"><LuMail size={16} /> Contact Me</Link>
+                <a className="btn btn-ghost" href={profile.resume} download="Mo_Aslam_Khan_Resume.pdf"><LuDownload size={16} /> Resume</a>
               </motion.div>
-            ))}
-          </div>
+            </div>
+            <motion.aside variants={rise} className="now" aria-label="Current role">
+              <p className="now-h"><span className="dot" /> Currently</p>
+              <p className="now-role">{job.role}</p>
+              <p className="muted">{job.company}</p>
+              <p className="now-meta"><LuMapPin size={14} /> {job.place} <span>since {job.period.split(' – ')[0]}</span></p>
+              <p className="now-copy">Building an AI-powered tender processing pipeline with Python, Redis, OCR and the Gemini API.</p>
+            </motion.aside>
+          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="/projects"
-              className="inline-flex items-center px-6 py-3 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-all"
-            >
-              View All Projects <FiArrowRight className="ml-2" />
-            </motion.a>
+          <motion.div className="stage" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.9, ease: [0.2, 0.7, 0.2, 1] }}>
+            <div className="win-glow" />
+            <motion.div key={p.id} className="win-wrap" initial={{ opacity: 0.4 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
+              <BrowserFrame project={p} className="win" />
+            </motion.div>
+            <div className="tabs" role="tablist" aria-label="Featured projects">
+              {stage.map((s, i) => (
+                <button key={s.id} role="tab" aria-selected={i === active} className={`tab ${i === active ? 'on' : ''}`} onClick={() => setActive(i)}>
+                  <span>{s.title}</span>
+                  <small>{s.tags.slice(0, 3).join(', ')}</small>
+                </button>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-3">
-              My <span className="text-blue-600">Tech Stack</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Tools and technologies I work with daily
-            </p>
-          </motion.div>
+      <section className="wrap tech-sec" aria-label="Technologies">
+        <p className="tech-h">The stack I work in every day</p>
+        <ul className="tech">
+          {homeTech.map((t) => { const [Icon, c] = skillIcon[t]; return <li key={t} style={{ '--c': c }}><Icon size={22} /><span>{t}</span></li> })}
+        </ul>
+      </section>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-            {techStack.map((tech, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="flex flex-col items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-              >
-                <div className="text-4xl text-gray-700 mb-3">{tech.icon}</div>
-                <h3 className="text-lg font-medium text-gray-800">
-                  {tech.name}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
+      <section className="wrap section" aria-labelledby="build-h">
+        <Reveal>
+          <SectionHead title="What I build." dim="Interfaces, the services behind them, and the AI that does the heavy lifting." />
+        </Reveal>
+        <div className="bento">
+          <Reveal className="b-a"><Spot className="cell">
+            <h3 id="build-h">AI-powered tender processing</h3>
+            <p>A pipeline for document extraction, cleaning and summarization, built for tender analysis at Aarav Tender Consultant.</p>
+            <ul className="parts">
+              {[[LuFileText, 'PDF processing'], [LuScanText, 'Multilingual OCR'], [LuListOrdered, 'Queue-based workers'], [LuSparkles, 'Gemini API'], [LuDatabase, 'Structured data storage']].map(([I, t]) => <li key={t}><I size={17} />{t}</li>)}
+            </ul>
+            <div className="stackrow"><SiPython size={18} /><SiRedis size={18} /><span>Python and Redis</span></div>
+          </Spot></Reveal>
+          <Reveal className="b-b" delay={0.08}><Spot className="cell">
+            <h3>Full stack web apps</h3>
+            <p>Responsive React.js interfaces on Node.js and Express.js APIs, with MongoDB or Supabase underneath.</p>
+            <div className="layers">
+              <div><SiReact size={18} /> React.js <small>interface</small></div>
+              <div><SiNodedotjs size={18} /> Node.js, Express.js <small>API</small></div>
+              <div><SiMongodb size={18} /> MongoDB, Supabase <small>data</small></div>
+            </div>
+          </Spot></Reveal>
+          <Reveal className="b-c" delay={0.04}><Spot className="cell">
+            <h3>Auth and access control</h3>
+            <p>Authentication and role-based access control, with JWT and Bcrypt used across my MERN stack projects.</p>
+            <ul className="chips big"><li><LuLock size={14} /> JWT</li><li>Bcrypt</li><li>RBAC</li></ul>
+          </Spot></Reveal>
+          <Reveal className="b-d" delay={0.1}><Spot as={Link} to="/projects" className="cell cell-link">
+            <h3>{projects.length} projects on GitHub</h3>
+            <p>MERN stack apps, React apps, a Chrome extension and a React Native app, with live demos where deployed.</p>
+            <div className="fan" aria-hidden="true">{projects.slice(1, 5).map((x) => <img key={x.id} src={x.image} alt="" loading="lazy" />)}</div>
+            <span className="textlink">Browse all projects <LuArrowRight size={16} /></span>
+          </Spot></Reveal>
         </div>
       </section>
-    </div>
-  );
-};
 
-export default HomePage;
+      <section className="wrap section" aria-labelledby="work-h">
+        <Reveal>
+          <SectionHead title="Selected projects." dim="A closer look at recent work.">
+            <Link to="/projects" className="textlink">All {projects.length} projects <LuArrowRight size={16} /></Link>
+          </SectionHead>
+          <span id="work-h" className="sr">Selected projects</span>
+        </Reveal>
+        <div className="home-projects">
+          <Reveal><ProjectCard project={projects[0]} variant="feature" /></Reveal>
+          <Reveal><ProjectCard project={projects[1]} /></Reveal>
+          <Reveal delay={0.08}><ProjectCard project={projects[2]} /></Reveal>
+        </div>
+      </section>
+
+      <section className="wrap section xp" aria-labelledby="xp-h">
+        <Reveal>
+          <SectionHead title="Experience." dim="Where I work now, and where I started." />
+        </Reveal>
+        <Reveal><Spot className="xp-card">
+          <div className="xp-top"><div><h3 id="xp-h">{job.role}</h3><p className="company">{job.company}, {job.place}</p></div><span className="mono">{job.period}</span></div>
+          <ul className="points">{job.points.map((x) => <li key={x}>{x}</li>)}</ul>
+          <p className="xp-prev">Before this: <b>{experience[1].role}</b> at {experience[1].company}, {experience[1].period}.</p>
+          <Link to="/about" className="textlink">Full background <LuArrowRight size={16} /></Link>
+        </Spot></Reveal>
+      </section>
+
+      <section className="wrap">
+        <Reveal><div className="closer">
+          <h2>Have a role or a project in mind?</h2>
+          <p className="lead">I would be glad to hear about it.</p>
+          <div className="cta center">
+            <Link className="btn btn-primary" to="/contact">Contact Me <LuArrowRight size={16} /></Link>
+            <a className="btn" href={`mailto:${profile.email}`}><LuMail size={16} /> {profile.email}</a>
+          </div>
+        </div></Reveal>
+      </section>
+    </>
+  )
+}

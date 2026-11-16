@@ -1,30 +1,32 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import App from './App.jsx'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import Home from "./pages/Home.jsx"
-import About from "./pages/About.jsx"
-import Projects from "./pages/Projects.jsx"
-import Contact from "./pages/Contact.jsx"
-import Skills from "./pages/Skills.jsx"
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import About from './pages/About'
+import Projects from './pages/Projects'
+import Skills from './pages/Skills'
+import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<App/>}>
-      <Route path='' element={<Home/>}></Route>
-      <Route path='about' element={<About/>}></Route>
-      <Route path='Contact' element={<Contact/>}></Route>
-      <Route path='projects' element={<Projects/>}></Route>
-      <Route path='skills' element={<Skills/>}></Route>
-    </Route>
-  )
-)
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'projects', element: <Projects /> },
+      { path: 'skills', element: <Skills /> },
+      { path: 'contact', element: <Contact /> },
+      { path: '*', element: <NotFound /> },
+    ],
+  },
+])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
-    {/* <App/> */}
+    <RouterProvider router={router} />
   </StrictMode>,
 )
